@@ -19,7 +19,37 @@ class IdcardsController < ApplicationController
     person2.expires = "12/31/2014"
     person2.role = "Student"
 
-    @cards = [person1, person2]
+    
+
+  card1=PokerCard.new
+   card1.number="Ace"
+   card1.suite="Spades"
+   card1.image=nil
+
+   card2=PokerCard.new
+   card2.number="King"
+   card2.suite="Spades"
+   card2.image=nil
+
+   card3=PokerCard.new
+   card3.number="Queen"
+   card3.suite="Spades"
+   card3.image=nil
+
+   card4=PokerCard.new
+   card4.number="Jack"
+   card4.suite="Spades"
+   card4.image=nil
+
+@idcards = [card1,card2,card3,card4]
+
+
+
+   fulldeck=[card1,card2,card3,card4]
+   @cards=fulldeck.sample(3)
+
+
+
     # render(text: "<html><h1>#{greeting}!</h1><p>It rained a bit.</p></html>")
   end
 
